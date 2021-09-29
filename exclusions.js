@@ -1,0 +1,1 @@
+exclusions = ['mate', 'football'];
