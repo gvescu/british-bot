@@ -1,2 +1,2 @@
 # british-bot
-Discord bot for converting English to British. Joke project.
+Discord bot for converting English to Bri-ish. Joke project.

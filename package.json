@@ -1,0 +1,13 @@
+{
+  "name": "british-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for converting English to British. Joke project.",
+  "main": "index.js",
+  "repository": "https://github.com/gvescu/british-bot",
+  "author": "Gustavo Vera Scuderi",
+  "license": "Unlicense",
+  "dependencies": {
+    "discord.js": "^13.1.0",
+    "dotenv": "^10.0.0"
+  }
+}
