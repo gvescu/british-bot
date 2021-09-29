@@ -2,20 +2,18 @@ if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
 
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const { Client, Intents } = require('discord.js');
+const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 client.on('ready', () => {
     client.user.setActivity('U WOT M8?', {type: 'WATCHING'});
 });
 
-client.on('message', msg => {
-    if (!msg.content.startsWith(process.env.PREFIX)) return;
-    const args = msg.content.slice(process.env.PREFIX.length).split(/ +/);
-    const command = args.shift().toLowerCase();
+client.on('interactionCreate', async interaction => {
+    if (!interaction.isCommand()) return;
 
-    if (command === 'ping') {
-        msg.reply('Pong!');
+    if (interaction.commandName === 'ping') {
+        await interaction.reply('Pong!');
     }
 });
 
