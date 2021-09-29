@@ -9,11 +9,14 @@ client.on('ready', () => {
     client.user.setActivity('U WOT M8?', {type: 'WATCHING'});
 });
 
-client.on('interactionCreate', async interaction => {
-    if (!interaction.isCommand()) return;
+client.on('message', msg => {
+    if (!msg.content.startsWith(process.env.PREFIX)) return;
+    const args = msg.content.slice(process.env.PREFIX.length).split(/ +/);
+    const command = args.shift().toLowerCase();
+    console.log(command);
 
-    if (interaction.commandName === 'ping') {
-        await interaction.reply('Pong!');
+    if (command === 'ping') {
+        msg.reply('Pong!');
     }
 });
 
