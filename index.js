@@ -35,7 +35,7 @@ const { Client, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
 client.on('ready', () => {
-    client.user.setActivity('U WOT M8?', {type: 'WATCHING'});
+    client.user.setActivity('Ur fcking messages', {type: 'WATCHING'});
 });
 
 client.on('messageCreate', async msg => {
